@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+</head>
+<body>
+    <h1>Generatore di Password Sicure</h1>
+    
+    <form method="POST">
+        <label for="lunghezza">Lunghezza della password:</label>
+        <select id="lunghezza" name="lunghezza">
+            <option value="8">8</option>
+            <option value="12">12</option>
+            <option value="16">16</option>
+            <option value="20">20</option>
+        </select>
+        <br><br>
+        
+        <input type="checkbox" id="numeri" name="numeri" checked>
+        <label for="numeri">Includi Numeri</label><br>
+        
+        <input type="checkbox" id="speciali" name="speciali" checked>
+        <label for="speciali">Includi Caratteri Speciali</label><br>
+        
+        <input type="checkbox" id="maiuscole" name="maiuscole" checked>
+        <label for="maiuscole">Includi Lettere Maiuscole</label><br><br>
+        
+        <button type="submit">Genera Password</button>
+    </form>
+    
+    {% if password %}
+    <h2>Password Generata:</h2>
+    <p>{{ password }}</p>
+    {% endif %}
+</body>
+</html>
